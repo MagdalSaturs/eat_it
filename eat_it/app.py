@@ -24,3 +24,7 @@ def delete_user(user_id):
 @app.put('/users/<user_id>')
 def update_user(user_id):
     return Response(status = 501)
+
+@app.get('/users')
+def userd():
+    return Response(status = 501)
