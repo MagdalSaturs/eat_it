@@ -26,5 +26,24 @@ def update_user(user_id):
     return Response(status = 501)
 
 @app.get('/users')
-def userd():
+def users():
     return Response(status = 501)
+
+@app.post('/users')
+def create_user():
+    user = request.json
+    return jsonify(user)
+
+@app.put('/users/<id>')
+def update_user(user_id):
+    user = request.json
+    return jsonify(user)
+
+@app.patch('/users/<id>')
+def user(user_id):
+    user = request.json
+    return jsonify(user)
+
+@app.delete('/users/<user_id>')
+def delete_user(user_id):
+    return Response(status = 204)
