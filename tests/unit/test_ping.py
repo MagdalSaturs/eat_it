@@ -29,6 +29,3 @@ class EndpointTests(unittest.TestCase):
         response = self.app.delete('/users/1')
         self.assertEqual(response.status_code, 204)
         self.assertEqual(response.data, b'')
-
-if __name__ == '__main__':
-    unittest.main()
