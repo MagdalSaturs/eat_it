@@ -15,13 +15,19 @@ def test_update_user(self):
     response = self.app.put('/users/1', json={'username': 'john'})
     self.assertEqual(response.status_code, 200)
     self.assertEqual(response.get_json(), {'username': 'john'})
+    with self.assertRaises(NotImplementedError):
+        self.app.put('/users/1', json={'username': 'john'})
 
 def test_partially_update_user(self):
     response = self.app.patch('/users/1', json={'username': 'john'})
     self.assertEqual(response.status_code, 200)
     self.assertEqual(response.get_json(), {'username': 'john'})
+    with self.assertRaises(NotImplementedError):
+        self.app.patch('/users/1', json={'username': 'john'})
 
 def test_delete_user(self):
     response = self.app.delete('/users/1')
     self.assertEqual(response.status_code, 204)
     self.assertEqual(response.data, b'')
+    with self.assertRaises(NotImplementedError):
+        self.app.delete('/users/1')
