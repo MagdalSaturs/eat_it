@@ -7,6 +7,9 @@ from eat_it.app import update_user
 from eat_it.app import delete_user
 # from eat_it.app import get_user
 
+import pytest
+
+from eat_it.app import app, create_user, update_user, get_user, delete_user, get_user
 
 @pytest.fixture
 def payload() -> dict:
